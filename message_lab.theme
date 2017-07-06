@@ -1,0 +1,19 @@
+<?php
+
+/* Preprocess functions for the Message Lab theme. */
+
+/**
+ *
+ * Implements hook_theme_suggestions_HOOK_alter
+ *
+ **/
+
+function message_lab_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
+  $request['view_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('view_id');
+  $request['display_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('display_id');
+  if(!empty($request)) {
+    $suggestions[] = 'item_list__' . $request['view_id'];
+    $suggestions[] = 'item_list__' . $request['display_id'];
+    $suggestions[] = 'item_list__' . $request['view_id'] . '__' . $request['display_id'];
+  }
+}

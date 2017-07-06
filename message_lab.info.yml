@@ -1,0 +1,7 @@
+name: Message Lab
+type: theme
+description: Theme for the Message Lab DTA site.
+core: 8.x
+base theme: bartik
+libraries:
+  - message_lab/global-styling
