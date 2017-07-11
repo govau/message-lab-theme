@@ -12,13 +12,14 @@
  * @see template_preprocess_form_element_label()
  */
 #}
+
 {%
   set classes = [
     title_display == 'after' ? 'option',
     title_display == 'invisible' ? 'visually-hidden',
     required ? 'js-form-required',
     required ? 'form-required',
-    'uikit-text-input__label',
+    'uikit-' ~ element.type.type ~ '__label',
   ]
 %}
 {% if title is not empty or required -%}

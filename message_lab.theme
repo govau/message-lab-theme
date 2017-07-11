@@ -17,3 +17,20 @@ function message_lab_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
     $suggestions[] = 'item_list__' . $request['view_id'] . '__' . $request['display_id'];
   }
 }
+
+/**
+ * The following two functions insert the form element type into the label. This
+ *
+ */
+
+/**
+ * Implements hook_preprocess_form_element()
+ *
+ * The contents of $variable['label'] will be passed to the preprocess
+ * hook of the element's label. This means the CSS of the label can change
+ * according to the form element type.
+ */
+
+function message_lab_preprocess_form_element(array &$variables) {
+  $variables['label']['type']['type'] = $variables['element']['#type'];
+}
