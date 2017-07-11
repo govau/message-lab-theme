@@ -1,0 +1,31 @@
+# Your project's server will run on localhost:xxxx at this port
+PORT: 3000
+
+CLEAN:
+  - "css"
+
+# Environments
+ENVIRONMENTS:
+  development: "message-lab.dd:8083"
+  staging: "message-lab.apps.staging.digital.gov.au"
+  production: null
+
+# Autoprefixer will make sure your CSS works with these browsers
+COMPATIBILITY:
+  - "last 2 versions"
+  - "ie >= 8"
+
+# Gulp will reference these paths when it copies files
+PATHS:
+  sass:
+    - "sass/message-lab.styles.scss"
+    - "node_modules/normalize.css"
+    - "node_modules/susy/sass"
+    - "pancake/sass"
+
+DRUSH:
+  enabled:
+    - true
+  alias:
+    cr:
+      - "drush cc all"

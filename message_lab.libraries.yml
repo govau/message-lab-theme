@@ -1,4 +1,4 @@
 global-styling:
   css:
     component:
-      css/style.css: {}
+      css/message-lab.style.css: {}

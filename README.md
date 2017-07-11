@@ -1,5 +1,6 @@
 # Message Lab Theme
 ## What is this?
-This is a custom theme for the internal Message Lab Drupal site. It is based on the core Bartik theme for now, however this will be switched to core/classy once actual theme development begins.
+This is a custom theme for the internal Message Lab Drupal site. It is a subtheme of Classy and incorporates the Digital Transformation Agency's [UI Kit](https://github.com/govau/uikit).
+
 ## What does this theme contain?
-This is a bare-bones theme providing minor theme overrides and a single preprocess function to enable theme hook suggestions for core/themes/classy/templates/dataset/item-list.html.twig.
+Message Lab Theme is a front-end theme providing template overrides and preprocess functions to enable theme hook suggestions,
