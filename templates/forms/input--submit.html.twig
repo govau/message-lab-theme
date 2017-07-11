@@ -10,7 +10,9 @@
  * @see template_preprocess_input()
  */
 #}
-<button class="uikit-btn uikit-btn--tertiary"{{ attributes }}>
-  Search
-</button>
+{% spaceless %}
+  <button class="uikit-btn uikit-btn--tertiary"{{ attributes }}>
+    Search
+  </button>
+{% endspaceless %}
 {{ children }}
