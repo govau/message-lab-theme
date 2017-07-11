@@ -53,7 +53,7 @@ function sass() {
     // Comment in the pipe below to run UnCSS in production
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(PRODUCTION || STAGING, $.cssnano()))
-    .pipe($.if(!PRODUCTION || STAGING, $.sourcemaps.write()))
+    .pipe($.if(!(PRODUCTION || STAGING), $.sourcemaps.write()))
     .pipe(gulp.dest('css'))
     .pipe(browser.reload({ stream: true }));
 }
