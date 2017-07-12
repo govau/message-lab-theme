@@ -7,6 +7,7 @@ import gulp     from 'gulp';
 import yaml     from 'js-yaml';
 import fs       from 'fs';
 import del      from 'del';
+import imagemin from 'gulp-imagemin';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -24,7 +25,7 @@ function loadConfig() {
 }
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default', gulp.series(clean, sass, server, watch));
+gulp.task('default', gulp.series(clean, optimiseImages, js, sass, server, watch));
 
 // Clean out the folders specified by the CLEAN constant.
 
@@ -32,6 +33,22 @@ function clean() {
   return del(
     CLEAN
   );
+}
+
+function optimiseImages(done) {
+  gulp.src('.' + PATHS.images + '/**/*.*')
+    .pipe(imagemin())
+    .pipe(gulp.dest('./img'));
+  browser.reload();
+  done();
+}
+
+// Move scripts from source into destination.
+// If anything else needs to happen to the JS, do it here.
+
+function js() {
+  return gulp.src('.' + PATHS.jsRoot + '/**/*.js')
+    .pipe(gulp.dest('./js'));
 }
 
 // Compile Sass into CSS
@@ -49,7 +66,7 @@ function sass() {
     // Comment in the pipe below to run UnCSS in production
     //.pipe($.if(PRODUCTION, $.uncss(UNCSS_OPTIONS)))
     .pipe($.if(!(PRODUCTION || STAGING), $.sourcemaps.write()))
-    .pipe(gulp.dest('css'))
+    .pipe(gulp.dest('./css'))
     .pipe(browser.reload({ stream: true }));
 }
 
@@ -117,7 +134,8 @@ function server(done) {
 
 // Watch for changes to Sass, twig files and .js.
 function watch() {
-  gulp.watch(['./sass/**/*.scss', './pancake/**/*.scss'], sass);
+  gulp.watch(['./src/sass/**/*.scss', './pancake/**/*.scss'], sass);
   gulp.watch(['./templates/**/*.html.twig', '*.theme'], twigWatch);
-  gulp.watch('./js/**/*.js', jsWatch);
+  gulp.watch('./src/js/**/*.js', js, jsWatch);
+  gulp.watch('./src/images/**/*.*', optimiseImages);
 }
