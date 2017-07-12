@@ -32,7 +32,8 @@ First, run `$ composer -v` to check Composer is installed. If it isn't, follow t
           "reference": "master"
         }
       }
-    }```
+    }
+```
 5. Run `$ composer require govau/message-lab-theme:dev-master` to add the package to the list of dependencies.
 6. Run `$ composer update` to install the package and update the `composer.lock` file.
 7. Enable the theme using Drush or the Drupal UI.
