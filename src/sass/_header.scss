@@ -1,0 +1,10 @@
+// Overrides for the header.
+
+.uikit-body header {
+  a {
+    border: none;
+    &:hover {
+      background-color: transparent;
+    }
+  }
+}

@@ -42,9 +42,11 @@
  * @see html.html.twig
  */
 #}
-  <div class="header-wrapper container-fluid">
-    <header class="uikit-header row" role="banner">
-      {{ page.header }}
+  <div class="header-outer-wrapper container-fluid">
+    <header class="uikit-header row uikit-header--light" role="banner">
+      <div class="header-inner-wrapper container">
+        {{ page.header }}
+      </div>
     </header>
   </div>
   <div class="top-wrapper container">
