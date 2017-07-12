@@ -1,6 +1,10 @@
+# The name of the site will be used to reference theme files.
+NAME: "message-lab-theme"
+
 # Your project's server will run on localhost:xxxx at this port
 PORT: 3000
 
+# Folder to clean up before running scripts.
 CLEAN:
   - "css"
 
@@ -8,7 +12,7 @@ CLEAN:
 ENVIRONMENTS:
   development: "message-lab.dd:8083"
   staging: "message-lab.apps.staging.digital.gov.au"
-  production: null
+  production: "message-lab.apps.staging.digital.gov.au"
 
 # Autoprefixer will make sure your CSS works with these browsers
 COMPATIBILITY:
@@ -17,15 +21,12 @@ COMPATIBILITY:
 
 # Gulp will reference these paths when it copies files
 PATHS:
+  themesRoot: "/themes/custom/"
+  jsRoot: "/js/"
+  cssRoot: "/css/"
+  sassRoot: "/sass/"
   sass:
-    - "sass/message-lab.styles.scss"
+    - "sass/message-lab-theme.style.scss"
     - "node_modules/normalize.css"
     - "node_modules/susy/sass"
     - "pancake/sass"
-
-DRUSH:
-  enabled:
-    - true
-  alias:
-    cr:
-      - "drush cc all"

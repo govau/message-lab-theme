@@ -11,20 +11,17 @@ import del      from 'del';
 // Load all Gulp plugins into one variable
 const $ = plugins();
 
-// Check for --production flag
+// Set up environment constants.
+const PRODUCTION = !!(yargs.argv.production);
 const STAGING = !!(yargs.argv.staging);
 
-// Check for --live flag
-const PRODUCTION = !!(yargs.argv.production);
-
 // Load settings from settings.yml
-const { COMPATIBILITY, PORT, PROXY, PATHS, ENVIRONMENTS, CLEAN } = loadConfig();
+const { NAME, PORT, CLEAN, ENVIRONMENTS, COMPATIBILITY, PATHS } = loadConfig();
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
   return yaml.load(ymlFile);
 }
-
 
 // Build the site, run the server, and watch for file changes
 gulp.task('default', gulp.series(clean, sass, server, watch));
@@ -38,9 +35,8 @@ function clean() {
 }
 
 // Compile Sass into CSS
-// In production, the CSS is compressed
 function sass() {
-  return gulp.src('./sass/*.scss')
+  return gulp.src('.' + PATHS.sassRoot + '/**/*.scss')
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass,
@@ -69,9 +65,53 @@ function twigWatch(done) {
 
 // Start a server with BrowserSync to preview the site in
 function server(done) {
-  browser.init({
-    proxy: ENVIRONMENTS.development
-  });
+  var matchCSS = PATHS.themesRoot + NAME + PATHS.cssRoot + NAME + '.style.css';
+  var matchJS = PATHS.themesRoot + NAME + PATHS.jsRoot + NAME + '.script.js';
+  var localCSS = PATHS.cssRoot + NAME + '.style.css';
+  var localJS = PATHS.jsRoot + NAME + '.script.js';
+  if(PRODUCTION) {
+    browser.init({
+      proxy: ENVIRONMENTS.production,
+      serveStatic: ['.'],
+      rewriteRules: [
+        {
+          match: new RegExp(matchCSS),
+          fn: function() {
+            return localCSS;
+          }
+        },
+        {
+          match: new RegExp(matchJS),
+          fn: function() {
+            return localJS;
+          }
+        },
+    ]
+    });
+  } else if(STAGING) {
+    browser.init({
+      proxy: ENVIRONMENTS.staging,
+      serveStatic: ['.'],
+      rewriteRules: [
+        {
+          match: new RegExp(matchCSS),
+          fn: function() {
+            return localCSS;
+          }
+        },
+        {
+          match: new RegExp(matchJS),
+          fn: function() {
+            return localJS;
+          }
+        },
+    ]
+    });
+  } else {
+    browser.init({
+      proxy: ENVIRONMENTS.development
+    });
+  }
   done();
 }
 

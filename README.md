@@ -60,10 +60,10 @@ For this to work properly, you must already have the Drupal 8 site you wish to p
 1. Check that Node and NPM are installed using `$ node -v` and `$ npm -v`. The theme uses gulp 4.0, so you may need to update Node and/or NPM to install it. If these are not installed, please install using Homebrew or use the instructions on the [Node.js site](https://nodejs.org/en/).
 2. Install gulp globally using `$ npm install gulp-cli -g`.
 3. Run `$ npm install` in the theme folder to install the required dependencies.
-4. Update the URLs in `config.yml` to reflect your environment. If you do not have a production or staging server you can set them to `null` or to the development/local server.
+4. Update the URLs in `config.yml` to reflect your environment. If you do not have a production or staging server set them to the development server.
 5. Run `$ gulp` to start the build process. This will do the following:
   1. Clean out anything in the `css` folder.
   2. Rebuild the css file(s) from the SCSS source files.
   3. Start a local server proxying the `development` site listed in the `config.yml` file.
   4. Begin watching changes to SCSS files in the `/sass/` folder, twig files in the `/templates/` folder and JavaScript in the `/js/` folder. Changes to SCSS files will be injected into the local proxy, and changes to javascript and twig files will trigger a browser reload.
-6. There is no need to minify CSS and JavaScript because this will be done by Drupal anyway. Run `$ gulp --production` to proxy the live site. You can also run [Uncss](https://github.com/giakki/uncss) by uncommenting the relevant line in `gulpfile.js`. Note, this can cause problems when scripts add selectors to the HTML and may require some configuration.
+6. There is no need to minify CSS and JavaScript because this will be done by Drupal anyway. Run `$ gulp --production` to proxy the live site as configured in `config.yml` and to remove source maps. You can also run [Uncss](https://github.com/giakki/uncss) by uncommenting the relevant line in `gulpfile.js`. Note, this can cause problems when scripts add selectors to the HTML and may require some configuration.
