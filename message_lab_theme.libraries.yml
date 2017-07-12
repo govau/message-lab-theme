@@ -1,0 +1,6 @@
+message-lab-theme-libraries:
+  css:
+    theme:
+      css/message-lab-theme.style.css: {}
+  js:
+    js/message-lab-theme.script.js: {}
