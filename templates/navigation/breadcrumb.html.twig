@@ -1,0 +1,24 @@
+{#
+/**
+ * @file
+ * Theme override for a breadcrumb trail.
+ *
+ * Available variables:
+ * - breadcrumb: Breadcrumb trail items.
+ */
+#}
+{% if breadcrumb %}
+  <nav class="uikit-breadcrumbs" role="navigation" aria-label="{{ 'Breadcrumb'|t }}">
+    <ul class="uikit-link-list uikit-link-list--inline">
+    {% for item in breadcrumb %}
+      <li>
+        {% if item.url %}
+          <a href="{{ item.url }}">{{ item.text }}</a>
+        {% else %}
+          {{ item.text }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  </nav>
+{% endif %}

@@ -6,6 +6,7 @@
   "dependencies": {},
   "devDependencies": {
     "@gov.au/body": "^0.1.1",
+    "@gov.au/breadcrumbs": "^0.2.0",
     "@gov.au/buttons": "^0.4.0",
     "@gov.au/core": "^0.1.2",
     "@gov.au/footer": "^0.2.0",
@@ -13,6 +14,7 @@
     "@gov.au/header": "^1.1.0",
     "@gov.au/headings": "^0.2.0",
     "@gov.au/link-list": "^0.2.0",
+    "@gov.au/pancake-js": "^1.0.9",
     "@gov.au/pancake-sass": "^1.1.1",
     "@gov.au/select": "^0.2.0",
     "@gov.au/tags": "^0.2.0",
@@ -68,6 +70,12 @@
       "modules": false,
       "location": "pancake/sass/",
       "name": "pancake.scss"
+    },
+    "js": {
+      "minified": true,
+      "modules": false,
+      "location": "pancake/js/",
+      "name": "pancake.min.js"
     }
   }
 }

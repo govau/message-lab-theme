@@ -1,0 +1,8 @@
+// Slight modification to buttons to match the height of text inputs and selects.
+
+.uikit-btn {
+  &__small {
+    @extend .uikit-btn;
+    padding: uikit-space(0.25) uikit-space(0.4);
+  }
+}

@@ -11,5 +11,8 @@
       clear: none;
       @extend .col-sm-4;
     }
+    .form-actions {
+      margin-top: uikit-space(1.0);
+    }
   }
 }
