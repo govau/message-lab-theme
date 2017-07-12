@@ -1,0 +1,5 @@
+// UI Kit overrides for the Search block.
+
+.uikit-search__label {
+  @extend .uikit-text-input__label;
+}
