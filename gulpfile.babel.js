@@ -8,6 +8,7 @@ import yaml     from 'js-yaml';
 import fs       from 'fs';
 import del      from 'del';
 import imagemin from 'gulp-imagemin';
+import cache    from 'gulp-cache';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -37,7 +38,7 @@ function clean() {
 
 function optimiseImages(done) {
   gulp.src('.' + PATHS.images + '/**/*.*')
-    .pipe(imagemin())
+    .pipe(cache(imagemin()))
     .pipe(gulp.dest('./img'));
   browser.reload();
   done();
