@@ -19,7 +19,7 @@
  */
 #}
 <h2>Talking points</h2>
-{% if attributes -%}
+{% if attributes is not empty -%}
   <div{{ attributes }}>
 {% endif %}
   {% if title %}

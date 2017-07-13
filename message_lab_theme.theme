@@ -8,7 +8,7 @@
  *
  **/
 
-function message_lab_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
+function message_lab_theme_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
   $request['view_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('view_id');
   $request['display_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('display_id');
   if(!empty($request)) {
@@ -31,6 +31,6 @@ function message_lab_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
  * according to the form element type.
  */
 
-function message_lab_preprocess_form_element(array &$variables) {
+function message_lab_theme_preprocess_form_element(array &$variables) {
   $variables['label']['type']['type'] = $variables['element']['#type'];
 }

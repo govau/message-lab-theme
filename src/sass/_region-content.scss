@@ -1,0 +1,11 @@
+// Layout for the content region.
+
+.region-content {
+  @extend .row;
+  > .block {
+    @extend .col-sm-12;
+    &.views-element-container {
+      @extend .col-sm-6;
+    }
+  }
+}

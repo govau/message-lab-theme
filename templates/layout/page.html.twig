@@ -88,9 +88,13 @@
   </main>
 
   {% if page.footer %}
-    <footer class="uikit-footer container-fluid" role="contentinfo">
-      <div class="row">
-        {{ page.footer }}
+  <div class="footer-outer-wrapper container-fluid">
+    <footer class="uikit-footer row" role="contentinfo">
+      <div class="footer-inner-wrapper container">
+        <div class="row">
+          {{ page.footer }}
+        </div>
       </div>
     </footer>
+  </div>
   {% endif %}

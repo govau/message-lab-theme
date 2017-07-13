@@ -1,0 +1,6 @@
+// Overrides for text inputs.
+
+.uikit-text-input {
+  // Added a radius to soften the text inputs and to match the button style.
+  border-radius: $uikit-border-radius;
+}
