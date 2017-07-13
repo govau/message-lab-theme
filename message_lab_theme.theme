@@ -19,6 +19,21 @@ function message_lab_theme_theme_suggestions_item_list_alter(&$suggestions, &$va
 }
 
 /**
+ * Implements hook_theme_suggestions_HOOK_alter() for block templates.
+ */
+function message_lab_theme_theme_suggestions_block_alter(array &$suggestions, array $variables) {
+  $block_id = $variables['elements']['#id'];
+
+  /* Add classes based on the block id. */
+  switch ($block_id) {
+    /* Local tasks */
+    case 'message_lab_theme_local_tasks':
+      $suggestions[] = 'block__floating';
+      break;
+  }
+}
+
+/**
  * The following two functions insert the form element type into the label. This
  *
  */

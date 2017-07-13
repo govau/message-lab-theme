@@ -1,0 +1,22 @@
+// Makes blocks float!
+
+body .floating-block {
+  position: fixed;
+  top: 40%;
+  opacity: 0.8;
+  padding-top: uikit-space(0.8);
+  z-index: 500;
+  padding-right: uikit-space(0.8);
+  background-color: white;
+  &.floating-block__right {
+    right: 0;
+    box-shadow: -5px 0px 10px -2px rgba(0,0,0,0.8);
+  }
+  &.floating-block__left {
+    left: 0;
+    box-shadow: 5px 0px 10px -2px rgba(0,0,0,0.8);
+  }
+  .tabs > li {
+    display: block;
+  }
+}

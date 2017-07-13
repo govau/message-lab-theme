@@ -1,11 +1,13 @@
-// Layout for the content region.
+// Layout for the content region for specific blocks.
 
 .region-content {
   @extend .row;
-  > .block {
+  #block-message-lab-theme-page-title,
+  #block-message-lab-theme-content {
     @extend .col-sm-12;
-    &.views-element-container {
-      @extend .col-sm-6;
-    }
+  }
+  #block-message-lab-theme-views-block-projects-block-1,
+  #block-message-lab-theme-views-block-projects-block-2 {
+    @extend .col-sm-6;
   }
 }
