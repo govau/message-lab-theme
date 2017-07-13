@@ -1,0 +1,12 @@
+// Minor style addition to the 'Talking Points'.
+
+.talking-point {
+  border-bottom: 1px solid $uikit-colour-Border-30;
+  margin-bottom: uikit-space(1);
+  .uikit-cta-link {
+    font-size: 16px;
+  }
+  .date {
+    margin-bottom: uikit-space(0.5);
+  }
+}

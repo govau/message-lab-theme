@@ -24,7 +24,7 @@
   {%- set attributes = attributes.addClass('item-list__' ~ context.list_style) %}
 {% endif %}
 {% if items or empty -%}
-  <dl{{ wrapper_attributes.addClass('uikit-tags') }}>
+  <dl{{ wrapper_attributes.addClass('uikit-tags', 'col-sm-10') }}>
     <dt>Tags:&nbsp;</dt>
     {%- if items -%}
         {%- for item in items -%}
