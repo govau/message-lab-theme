@@ -1,0 +1,9 @@
+message_lab_naked:
+  label: Naked layout
+  category: Display Suite
+  class: '\Drupal\ds\Plugin\DsLayout'
+  type: partial
+  template: templates/nodes/naked
+  regions:
+    ds_content:
+      label: Content

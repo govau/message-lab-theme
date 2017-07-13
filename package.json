@@ -8,6 +8,7 @@
     "@gov.au/body": "^0.1.1",
     "@gov.au/breadcrumbs": "^0.2.0",
     "@gov.au/buttons": "^0.4.0",
+    "@gov.au/callout": "^0.2.0",
     "@gov.au/core": "^0.1.2",
     "@gov.au/cta-link": "^0.2.0",
     "@gov.au/footer": "^0.2.0",
