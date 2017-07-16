@@ -16,6 +16,7 @@
     "@gov.au/header": "^1.1.0",
     "@gov.au/headings": "^0.2.0",
     "@gov.au/link-list": "^0.2.0",
+    "@gov.au/page-alerts": "^0.2.0",
     "@gov.au/pancake-js": "^1.0.9",
     "@gov.au/pancake-sass": "^1.1.1",
     "@gov.au/responsive-media": "^0.1.0",

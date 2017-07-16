@@ -10,7 +10,7 @@ CLEAN:
 
 # Environments
 ENVIRONMENTS:
-  development: "message-lab.dd:8083"
+  development: "dev.message-lab:8888"
   staging: "message-lab.apps.staging.digital.gov.au"
   production: "message-lab.apps.staging.digital.gov.au"
 
