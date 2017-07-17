@@ -16,11 +16,8 @@
   set classes = [
     'region',
     'region-' ~ region|clean_class,
-    'grids col-sm-5',
   ]
 %}
 {% if content %}
-  <div{{ attributes.addClass(classes) }}>
-    {{ content }}
-  </div>
+  {{ content }}
 {% endif %}

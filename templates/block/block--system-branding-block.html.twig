@@ -14,17 +14,19 @@
  */
 #}
 {% block content %}
-  {% if site_logo %}
-    <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
-      <img class="uikit-responsive-media-img" src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
-    </a>
-  {% endif %}
-  {% if site_name %}
-    <h1 class="uikit-header-heading">
-      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
-    </div>
-  {% endif %}
-  {% if site_slogan %}
-    <div class="site-slogan">{{ site_slogan }}</div>
-  {% endif %}
+  <div class="grids col-sm-7">
+    {% if site_logo %}
+      <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="site-logo">
+        <img class="uikit-responsive-media-img" src="{{ site_logo }}" alt="{{ 'Home'|t }}" />
+      </a>
+    {% endif %}
+    {% if site_name %}
+      <h1 class="uikit-header-heading">
+        <a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home">{{ site_name }}</a>
+      </h1>
+    {% endif %}
+    {% if site_slogan %}
+      <div class="site-slogan">{{ site_slogan }}</div>
+    {% endif %}
+  </div>
 {% endblock %}

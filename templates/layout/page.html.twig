@@ -45,30 +45,26 @@
   <div class="header-outer-wrapper container-fluid">
     <header class="uikit-header row uikit-header--light" role="banner">
       <div class="header-inner-wrapper container">
-        {{ page.header }}
+        <div class="branding row">
+          {{ page.header }}
+        </div>
+        <div id="nav" class="top-wrapper row">
+          <div class="grids col-sm-8">
+            {{ page.primary_menu }}
+          </div>
+          <div class="grids col-sm-4">
+            {{ page.secondary_menu }}
+          </div>
+        </div>
       </div>
     </header>
   </div>
-  <div id="nav" class="top-wrapper container">
-    <div class="row">
-      <div class="grids col-sm-8">
-        {{ page.primary_menu }}
-      </div>
-      <div class="grids col-sm-4">
-        {{ page.secondary_menu }}
-      </div>
-    </div>
-
-    {{ page.breadcrumb }}
-
-    {{ page.highlighted }}
-
-    {{ page.help }}
-  </div>
-
   <main id="content" role="main">
-
     <div class="container">
+      <p>What?</p>
+      {{ page.breadcrumb }}
+      {{ page.highlighted }}
+      {{ page.help }}
       {{ page.content }}
     </div>{# /.container #}
 

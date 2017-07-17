@@ -3,7 +3,8 @@
 .region-content {
   @extend .row;
   #block-message-lab-theme-page-title,
-  #block-message-lab-theme-content {
+  #block-message-lab-theme-content,
+  #block-message-lab-theme-views-block-evidence-block-1 {
     @extend .col-sm-12;
   }
   #block-message-lab-theme-views-block-projects-block-1,

@@ -4,19 +4,22 @@
   .menu {
     display: flex;
     padding: 0;
+    margin: 0;
     .menu-item {
       flex: 0 0 auto;
-      margin: 0 uikit-space(0.25);
+      font-weight: bold;
     }
   }
   .menu--main .menu {
     justify-content: flex-start;
-    border-left: 8px solid $uikit-colour-Border-50;
-    padding-left: uikit-space(0.25);
+    .menu-item {
+      margin: 0 uikit-space(1) 0 0;
+    }
   }
   .menu--account .menu {
     justify-content: flex-end;
-    border-right: 8px solid $uikit-colour-Border-50;
-    padding-right: uikit-space(0.25);
+    .menu-item {
+      margin: 0 0 0 uikit-space(1);
+    }
   }
 }
