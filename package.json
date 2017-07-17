@@ -21,6 +21,7 @@
     "@gov.au/pancake-sass": "^1.1.1",
     "@gov.au/responsive-media": "^0.1.0",
     "@gov.au/select": "^0.2.0",
+    "@gov.au/skip-link": "^0.2.0",
     "@gov.au/tags": "^0.2.0",
     "@gov.au/text-inputs": "^0.1.1",
     "babel-preset-es2015": "^6.24.1",

@@ -49,7 +49,7 @@
       </div>
     </header>
   </div>
-  <div class="top-wrapper container">
+  <div id="nav" class="top-wrapper container">
     <div class="row">
       <div class="grids col-sm-8">
         {{ page.primary_menu }}
@@ -66,8 +66,7 @@
     {{ page.help }}
   </div>
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <main id="content" role="main">
 
     <div class="container">
       {{ page.content }}
