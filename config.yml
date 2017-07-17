@@ -29,5 +29,5 @@ PATHS:
   sass:
     - "src/sass/message-lab-theme.style.scss"
     - "node_modules/normalize.css"
-    - "node_modules/susy/sass"
+    - "fonts"
     - "pancake/sass"
