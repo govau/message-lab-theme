@@ -4,6 +4,10 @@
   padding-bottom: uikit-space(1.2);
   .menu {
     display: flex;
+    flex-wrap: wrap;
+    @include uikit-media('sm') {
+      flex-wrap: nowrap;
+    }
     padding: 0;
     margin: 0;
     .menu-item {

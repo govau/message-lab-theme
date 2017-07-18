@@ -15,6 +15,4 @@
  */
 #}
 
-{# set element['#link'].localized_options.attributes.class = menu_item_class #}
-{# set link = link|merge({'#attributes':[{'class':link['#attributes']['class']|merge(['test'])}]}) #}
 <li{{ attributes.addClass(is_active ? 'is-active') }}>{{ link }}</li>

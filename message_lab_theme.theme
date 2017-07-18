@@ -1,6 +1,7 @@
 <?php
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Markup;
 
 /* Preprocess functions for the Message Lab theme. */
 
