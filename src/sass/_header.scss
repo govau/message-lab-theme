@@ -1,6 +1,7 @@
 // Overrides for the header.
 
 .uikit-body header {
+  border-bottom: 4px solid $uikit-colour-Border;
   a {
     border: none;
     &:hover {
