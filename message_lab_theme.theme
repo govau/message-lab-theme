@@ -47,6 +47,22 @@ function message_lab_theme_preprocess_form_element(array &$variables) {
   $variables['label']['type']['type'] = $variables['element']['#type'];
 }
 
+/**
+ * Implements hook_preprocess_menu_local_task()
+ *
+ * Adds classes to the local tasks menu to enable icons.
+ */
+
 function message_lab_theme_preprocess_menu_local_task(&$variables) {
   $variables['link']['#options']['attributes']['class'][] = 'icon-' . Html::getClass($variables['element']['#link']['title']);
+}
+
+/**
+ * Implements hook_form_search_block_form_alter()
+ *
+ * Alters the search form to wrap the inputs in a div to allow easier styling.
+ */
+
+function message_lab_theme_form_search_block_form_alter(&$form, &$form_state) {
+  // Leaving as a stub.
 }

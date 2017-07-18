@@ -7,4 +7,10 @@
       background-color: transparent;
     }
   }
+  .uikit-header-heading {
+    margin-top: uikit-space(0.4);
+  }
+  &.uikit-header {
+    padding: 0;
+  }
 }

@@ -26,21 +26,7 @@
  * @see search_preprocess_block()
  */
 #}
-{%
-  set classes = [
-    'block',
-    'block-search',
-    'container-inline',
-    'grids col-sm-5',
-  ]
-%}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {% if label %}
-    <h2{{ title_attributes }}>{{ label }}</h2>
-  {% endif %}
-  {{ title_suffix }}
-  {% block content %}
-    {{ content }}
-  {% endblock %}
+
+<div class="search grids col-sm-5 col-sm-offset-7">
+  {{ content }}
 </div>

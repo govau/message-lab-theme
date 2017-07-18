@@ -45,10 +45,13 @@
   <div class="header-outer-wrapper container-fluid">
     <header class="uikit-header row uikit-header--light" role="banner">
       <div class="header-inner-wrapper container">
-        <div class="branding row">
+        <div class="branding-wrapper row">
           {{ page.header }}
         </div>
-        <div id="nav" class="top-wrapper row">
+        <div class="search-wrapper row">
+          {{ page.highlighted }}
+        </div>
+        <div class="menu-wrapper row" id="nav" >
           <div class="grids col-sm-8">
             {{ page.primary_menu }}
           </div>
@@ -61,9 +64,7 @@
   </div>
   <main id="content" role="main">
     <div class="container">
-      <p>What?</p>
       {{ page.breadcrumb }}
-      {{ page.highlighted }}
       {{ page.help }}
       {{ page.content }}
     </div>{# /.container #}

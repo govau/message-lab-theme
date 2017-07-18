@@ -1,6 +1,7 @@
 // Menu layout.
 
-.top-wrapper {
+.menu-wrapper {
+  margin-bottom: uikit-space(1.2);
   .menu {
     display: flex;
     padding: 0;
@@ -17,9 +18,19 @@
     }
   }
   .menu--account .menu {
-    justify-content: flex-end;
-    .menu-item {
-      margin: 0 0 0 uikit-space(1);
+    @include uikit-media('xs') {
+      margin-top: uikit-space(1);
+      justify-content: flex-start;
+      .menu-item {
+        margin: 0 uikit-space(1) 0 0;
+      }
+    }
+    @include uikit-media('sm') {
+      margin-top: uikit-space(0);
+      justify-content: flex-end;
+      .menu-item {
+        margin: 0 0 0 uikit-space(1);
+      }
     }
   }
 }

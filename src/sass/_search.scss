@@ -1,5 +1,43 @@
-// UI Kit overrides for the Search block.
-
-.uikit-search__label {
-  @extend .uikit-text-input__label;
+// Overrides for the Search block.
+.search-wrapper {
+  margin-bottom: uikit-space(1.2);
+}
+.search {
+  .form-item,
+  .form-actions {
+    margin: 0;
+  }
+  form {
+    position: relative;
+  }
+  .search-input {
+    width: 100%;
+    padding-right: 3.4em;
+    border: 2px solid $uikit-colour-Border;
+    border-radius: $uikit-border-radius;
+    float: left;
+    text-indent: uikit-space(0.5);
+    line-height: 3em;
+    background-color: $uikit-colour-Background-60;
+    @extend .uikit-body;
+  }
+  .search-submit {
+    width: 3.2em;
+    height: 3.1em;
+    margin-top:2px;
+    text-indent: -99em;
+    background-color: transparent;
+    border: none;
+    transition: ease-in-out 0.1s background-color;
+    background: url('../img/search--navy.svg') no-repeat center center;
+    background-size: 20px auto;
+    &:hover {
+      background-color: $uikit-colour-Background--10;
+    }
+  }
+  .form-actions {
+    position: absolute;
+    top: 0;
+    right: 2px;
+  }
 }
