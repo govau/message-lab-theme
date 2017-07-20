@@ -1,0 +1,13 @@
+// Style for the 'Simple, Clear, Fast' tags.
+
+.uikit-tags-scf {
+  dd {
+    background-color: $uikit-colour-Primary;
+    a {
+      color: $uikit-colour-Background;
+      &:hover {
+        color: $uikit-colour-Text;
+      }
+    }
+  }
+}
