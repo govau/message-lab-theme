@@ -10,4 +10,10 @@
  * @see template_preprocess_input()
  */
 #}
-<input{{ attributes }} />{{ children }}
+
+{% set classes = [
+                  'uikit-text-input',
+                  'uikit-text-input--block'
+                  ]
+%}
+<input{{ attributes.addClass(classes) }} />{{ children }}
