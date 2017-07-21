@@ -1,0 +1,5 @@
+// Override for buttons.
+
+#content .search-submit {
+  @extend .uikit-btn;
+}
