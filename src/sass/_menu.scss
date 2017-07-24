@@ -5,6 +5,7 @@
   .menu {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     @include uikit-media('sm') {
       flex-wrap: nowrap;
     }
@@ -25,14 +26,15 @@
     }
   }
   .menu--main .menu {
-    justify-content: flex-start;
     .menu-item {
       margin: 0 uikit-space(1) 0 0;
+    }
+    @include uikit-media('sm') {
+      justify-content: flex-start;
     }
   }
   .menu--account .menu {
     margin-top: uikit-space(1);
-    justify-content: flex-start;
     .menu-item {
       margin: 0 uikit-space(1) 0 0;
     }

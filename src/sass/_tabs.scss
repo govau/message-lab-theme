@@ -1,0 +1,10 @@
+// Overrides for tabs.
+
+.tabs {
+  &.primary {
+    text-align: center;
+    @include uikit-media('md') {
+      text-align: left;
+    }
+  }
+}
