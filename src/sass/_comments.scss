@@ -1,0 +1,44 @@
+// Styles for comments on Talking Points node pages.
+
+.comment-wrapper {
+  background-color: $uikit-colour-Background-90;
+  border: $uikit-borderize;
+  padding: uikit-space(0.5);
+  h2:first-of-type {
+    margin-top: 0;
+  }
+  > article {
+    padding: uikit-space(0.5);
+    @include uikit-clearfix();
+  }
+  mark {
+    float: left;
+    margin-right: uikit-space(0.5);
+    @include uikit-media('sm') {
+      float: none;
+      margin-right: 0;
+    }
+    padding: uikit-space(0.2);
+    border: $uikit-borderize;
+    border-radius: $uikit-border-radius;
+    text-align: center;
+  }
+  footer {
+    padding-top: uikit-space(0.3);
+    .comment__submitted {
+      display: inline-block;
+      @include uikit-media('md') {
+        border-right: $uikit-borderize;
+      }
+      margin-right: uikit-space(0.5);
+      padding-right: uikit-space(0.5);
+    }
+  }
+  .content {
+
+  }
+  .indented {
+    border-left: 8px solid $uikit-colour-Hero-20;
+    padding-left: uikit-space(0.5);
+  }
+}

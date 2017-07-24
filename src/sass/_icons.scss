@@ -1,0 +1,9 @@
+// Overrides for icons.
+
+[data-icon],
+[class^="icon-"],
+[class*=" icon-"] {
+  &:before {
+    margin-right: uikit-space(0.5);
+  }
+}
