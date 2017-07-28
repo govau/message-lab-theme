@@ -1,0 +1,20 @@
+// Style for tables.
+
+table {
+  margin: uikit-space(1) 0;
+  width: 100%;;
+  thead {
+    th {
+      text-align: left;
+      padding: uikit-space(0.2) 0;
+    }
+  }
+  tbody {
+    td {
+      padding: uikit-space(0.2) 0;
+    }
+  }
+  tfoot {
+
+  }
+}
