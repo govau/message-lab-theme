@@ -2,42 +2,62 @@
 .search-wrapper {
   margin-bottom: uikit-space(1.2);
 }
-.search {
-  .form-item,
-  .form-actions {
-    margin: 0;
-  }
+.search  /* Top search bar */,
+#content /* Search bars on other pages */ {
+  .container-inline,
   form {
     position: relative;
   }
-  .search-input {
-    width: 100%;
-    padding-right: 3.4em;
-    border: 2px solid $uikit-colour-Border;
-    border-radius: $uikit-border-radius;
-    float: left;
-    text-indent: uikit-space(0.5);
-    line-height: 3em;
-    background-color: $uikit-colour-Background-60;
-    @extend .uikit-body;
-  }
-  .search-submit {
-    width: 3.2em;
-    height: 3.1em;
-    margin-top:2px;
-    text-indent: -99em;
-    background-color: transparent;
-    border: none;
-    transition: ease-in-out 0.1s background-color;
-    background: url('../img/search--navy.svg') no-repeat center center;
-    background-size: 20px auto;
-    &:hover {
-      background-color: $uikit-colour-Background--10;
-    }
+  .form-item {
+    margin: 0;
   }
   .form-actions {
+    margin: 0;
     position: absolute;
     top: 0;
     right: 2px;
+  }
+}
+
+.search-page-form {
+  label {
+    display: block;
+  }
+}
+
+.search-help-link {
+  display: inline-block;
+  margin-top: uikit-space(0.5);
+}
+
+.search-input {
+  width: 100%;
+  padding-right: 3.4em;
+  border: 2px solid $uikit-colour-Border;
+  border-radius: $uikit-border-radius;
+  float: left;
+  text-indent: uikit-space(0.5);
+  line-height: 3.1em;
+  background-color: $uikit-colour-Background-60;
+}
+.search-submit {
+  width: 3.2em;
+  height: 3.1em;
+  margin-top:3px !important;
+  text-indent: -99em;
+  background-color: transparent !important;
+  border: none;
+  transition: ease-in-out 0.1s background-color !important;
+  background: url('../img/search--navy.svg') no-repeat center center !important;
+  background-size: 20px auto !important;
+  position: relative;
+  &:hover {
+    background-color: $uikit-colour-Background--10 !important;
+  }
+  .search-page-form & {
+    display: block;
+    position: absolute;
+    top: uikit-space(1.35);
+    right: 3px;
   }
 }

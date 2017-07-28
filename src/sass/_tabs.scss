@@ -2,9 +2,7 @@
 
 .tabs {
   &.primary {
-    text-align: center;
-    @include uikit-media('md') {
-      text-align: left;
-    }
+    padding-left: 0;
+    margin-top: uikit-space(1);
   }
 }

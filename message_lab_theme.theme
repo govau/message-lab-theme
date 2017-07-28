@@ -10,6 +10,23 @@ use Drupal\Component\Utility\Html;
  *
  **/
 
+function message_lab_theme_preprocess_input__checkbox(&$variables) {
+  $variables['element']['#wrapped_label'] = TRUE;
+}
+
+function message_lab_theme_theme_suggestions_form_element_alter(&$suggestions, $variables) {
+  if($variables['element']['#type'] == 'checkbox') {
+    $suggestions[] = 'form_element__wrapped';
+  }
+}
+
+function message_lab_theme_preprocess_form_element__wrapped(&$variables) {
+  $variables['label']['#theme'] = 'form_element_label__open';
+  $variables['label_open'] = $variables['label'];
+  unset($variables['label']);
+  $variables['title'] = $variables['element']['#title'];
+}
+
 function message_lab_theme_theme_suggestions_item_list_alter(&$suggestions, &$vars) {
   $request['view_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('view_id');
   $request['display_id'] = \Drupal::routeMatch()->getRouteObject()->getDefault('display_id');
@@ -35,10 +52,7 @@ function message_lab_theme_theme_suggestions_block_alter(array &$suggestions, ar
 
   /* Add classes based on the block id. */
   switch ($block_id) {
-    /* Local tasks */
-    case 'message_lab_theme_local_tasks':
-      $suggestions[] = 'block__floating';
-      break;
+    /* Leaving as a stub */
   }
 }
 
