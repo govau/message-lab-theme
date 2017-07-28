@@ -1,6 +1,7 @@
 // Minor style addition to the 'Talking Points'.
 
-.talking-point {
+.talking-point,
+.evidence {
   border-bottom: 1px solid $uikit-colour-Border-30;
   margin-bottom: uikit-space(1);
   .uikit-cta-link {
