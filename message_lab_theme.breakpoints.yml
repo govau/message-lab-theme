@@ -1,0 +1,30 @@
+message_lab_theme.mobile:
+  label: mobile
+  mediaQuery: '(max-width: 575px)'
+  weight: -1
+  multipliers:
+    - 1x
+message_lab_theme.xs:
+  label: xs
+  mediaQuery: '(min-width: 576px)'
+  weight: 0
+  multipliers:
+    - 1x
+message_lab_theme.sm:
+  label: sm
+  mediaQuery: '(min-width: 768px)'
+  weight: 1
+  multipliers:
+    - 1x
+message_lab_theme.md:
+  label: md
+  mediaQuery: '(min-width: 992px)'
+  weight: 2
+  multipliers:
+    - 1x
+message_lab_theme.lg:
+  label: lg
+  mediaQuery: '(min-width: 1200px)'
+  weight: 3
+  multipliers:
+    - 1x

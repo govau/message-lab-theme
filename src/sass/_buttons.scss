@@ -1,5 +1,7 @@
 // Override for buttons.
 
-#content .search-submit {
-  @extend .uikit-btn;
+#content {
+  .views-exposed-form .button {
+    @extend .uikit-btn;
+  }
 }
