@@ -1,6 +1,20 @@
 // Menu layout.
 
 .menu-wrapper {
+  .nav-toggle {
+    display: block;
+    visibility: visible;
+    @include uikit-media('sm') {
+      display: none;
+      visibility: hidden;
+      + nav {
+        display: block !important;
+      }
+    }
+    + nav {
+      display: none;
+    }
+  }
   padding-bottom: uikit-space(1.2);
   .menu {
     display: flex;
@@ -12,12 +26,13 @@
     padding: 0;
     margin: 0;
     .menu-item {
-      flex: 0 0 auto;
+      flex: 0 0 100%;
       font-weight: bold;
       a:hover {
         border-bottom: 1px solid $uikit-colour-Link;
       }
       @include uikit-media('sm') {
+        flex: 0 0 auto;
         a:hover {
           border-bottom: 4px solid $uikit-colour-Link;
           padding-bottom: uikit-space(1.35);

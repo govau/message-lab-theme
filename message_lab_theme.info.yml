@@ -3,5 +3,3 @@ type: theme
 description: Theme for the Message Lab DTA site.
 core: 8.x
 base theme: classy
-libraries:
-  - message_lab_theme/message-lab-theme-libraries

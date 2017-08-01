@@ -4,3 +4,6 @@ message-lab-theme-libraries:
       css/message-lab-theme.style.css: {}
   js:
     js/message-lab-theme.script.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal

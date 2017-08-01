@@ -137,6 +137,6 @@ function server(done) {
 function watch() {
   gulp.watch(['./src/sass/**/*.scss', './pancake/**/*.scss'], sass);
   gulp.watch(['./templates/**/*.html.twig', '*.theme'], twigWatch);
-  gulp.watch('./src/js/**/*.js', js, jsWatch);
+  gulp.watch('./src/scripts/**/*.js', gulp.series(js, jsWatch));
   gulp.watch('./src/images/**/*.*', optimiseImages);
 }
