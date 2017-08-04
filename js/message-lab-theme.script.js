@@ -1,50 +1,67 @@
-// Stub file for future scripts.
-
 (function($, Drupal) {
   Drupal.behaviors.messageLabThemeNavigation = {
-    // Opens and closes the main navigation.
+    // Controls the main navigation.
     attach: function (context, settings) {
-      $(context).find('.nav-toggle').each(function() {
-        $(this).prop('aria-expanded', true); // Set default.
-        $(this).on('click', function() {
-          $(this).prop('aria-expanded', !$(this).prop('aria-expanded')); // Toggle the aria-expanded property.
-          $(this).next('nav').slideToggle(); // Toggle the slide.
-        });
+
+      // Set up required variables.
+      var showNavToggleAtWidth = 768;
+      var currentWindowState;
+
+      // Add the resize function to the window.
+      $(window, context).resize(function () {
+        if(compareAgainstWindowState()) showHideMenu();
       });
-    }
-  }
-  Drupal.behaviors.messageLabThemeResize = {
-    // Resize function.
-    attach: function (context, settings) {
 
-      // Check that the correct context exists.
-      if ($(context).find('.nav-toggle').length) {
-        console.log($(this));
-        // Set the toggle width.
-        var showNavToggleAtWidth = 768;
+      // Add the click handler to the navigation toggle button.
+      $('.nav-toggle', context).click(function() {
+        slideToggle();
+      });
 
-        // Check the width of the window when Drupal loads.
-        $(window).width() < showNavToggleAtWidth ? showNavToggle = true : showNavToggle = false;
-        classToggle(showNavToggle);
+      function checkWindowSize() {
+        // This function returns 'true' if the width of the window is below or equal
+        // to showNavToggleAtWidth. It returns false if it is not.
+        return $(window).width() <= showNavToggleAtWidth ? true : false;
+      }
 
-        // Check the width of the window when it is resized.
-        $(window).resize(function() {
-          if($(this).width() >= showNavToggleAtWidth) {
-            showNavToggle = false;
-          } else {
-            showNavToggle = true;
-          }
-          classToggle(showNavToggle);
-        });
-        function classToggle(toggle) {
-          console.log(toggle);
-          if (toggle) {
-            $(context).find('.nav-toggle').addClass('active');
-          } else {
-            $(context).find('.nav-toggle').removeClass('active');
-          }
+      function setInitialWindowState() {
+        // Initialise currentWindowState based on the initial size of the window.
+        // This will set the state to 'true' if it loads on a narrow screen,
+        // and 'false' if it loads on a wide screen. It then calls showHideMenu
+        // to set the opening state of the menu.
+        if (typeof currentWindowState === 'undefined') {
+          currentWindowState = checkWindowSize();
         }
-      };
+        showHideMenu();
+      }
+
+      function compareAgainstWindowState() {
+        // Check whether the size has flicked below the threshold. Returns 'false'
+        // if there has been no change, 'true' if there has.
+        if (checkWindowSize() === currentWindowState) {
+          return false;
+        } else {
+          currentWindowState = checkWindowSize();
+          return true;
+        }
+      }
+
+      function showHideMenu() {
+        currentWindowState ? $('.nav-toggle', context).next('nav').hide() : $('.nav-toggle', context).next('nav').show();
+      }
+
+      function slideToggle() {
+        $('.nav-toggle').next('nav').slideToggle(function() {
+          toggleAria();
+        });
+      }
+
+      function toggleAria() {
+        // Toggles the aria-expanded attribute.
+        $('.nav-toggle').attr('aria-expanded', function(_, attr) { return !(attr == 'true') }); // Toggle the aria-expanded attribute.
+      }
+
+      // Set the current window state.
+      setInitialWindowState();
     }
   }
 })(jQuery, Drupal);
