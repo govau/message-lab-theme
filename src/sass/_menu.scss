@@ -1,15 +1,13 @@
 // Menu layout.
 
 .menu-wrapper {
+  padding-bottom: uikit-space(1.2);
   .nav-toggle {
     display: block;
-    visibility: visible;
     @include uikit-media('sm') {
       display: none;
-      visibility: hidden;
     }
   }
-  padding-bottom: uikit-space(1.2);
   .menu {
     display: flex;
     flex-wrap: wrap;
