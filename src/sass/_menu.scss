@@ -3,9 +3,29 @@
 .menu-wrapper {
   padding-bottom: uikit-space(1.2);
   .nav-toggle {
-    display: block;
+    display: inline-block;
+    width: 5rem;
+    position: relative;
     @include uikit-media('sm') {
       display: none;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: uikit-space(.1);
+      bottom: uikit-space(.5);
+      right: uikit-space(0.2);
+      width: 1.2em;
+      height: 1.2em;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center center;
+      transform: rotate(0deg);
+      transition: transform 0.2s ease-in-out;
+      background-image: url('https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/icons/chevron-down--navy.svg');
+    }
+    &[aria-expanded="true"]:before {
+      transform: rotate(180deg);
     }
   }
   .menu {
