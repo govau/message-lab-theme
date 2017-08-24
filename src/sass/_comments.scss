@@ -1,8 +1,6 @@
 // Styles for comments on Talking Points node pages.
 
 .comment-wrapper {
-  background-color: $uikit-colour-Background-90;
-  border: $uikit-borderize;
   padding: uikit-space(0.5);
   margin-top: uikit-space(1.5);
   h2:first-of-type {
@@ -34,9 +32,6 @@
       margin-right: uikit-space(0.5);
       padding-right: uikit-space(0.5);
     }
-  }
-  .content {
-
   }
   .indented {
     border-left: 8px solid $uikit-colour-Hero-20;
