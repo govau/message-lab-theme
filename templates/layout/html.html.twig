@@ -42,14 +42,6 @@
     <js-placeholder token="{{ placeholder_token }}">
   </head>
   <body{{ attributes.addClass(body_classes) }}>
-    {#
-      Keyboard navigation/accessibility link to main content section in
-      page.html.twig.
-    #}
-    <nav class="uikit-skip-link">
-  		<a class="uikit-skip-link__link" href="#content">{{ 'Skip to main content'|t }}</a>
-  		<a class="uikit-skip-link__link" href="#nav">{{ 'Skip to main navigation'|t }}</a>
-  	</nav>
     {{ page_top }}
     {{ page }}
     {{ page_bottom }}
