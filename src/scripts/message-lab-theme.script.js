@@ -4,7 +4,7 @@
     attach: function (context, settings) {
 
       // Set up required variables.
-      var showNavToggleAtWidth = 768;
+      var showNavToggleAtWidth = 751;
       var currentWindowState;
 
       // Add the resize function to the window.

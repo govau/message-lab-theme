@@ -2,47 +2,59 @@
 
 .menu-wrapper {
   padding-bottom: uikit-space(1.2);
-  .nav-toggle {
-    display: inline-block;
-    width: 5rem;
-    position: relative;
-    @include uikit-media('sm') {
-      display: none;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      top: uikit-space(.1);
-      bottom: uikit-space(.5);
-      right: uikit-space(0.2);
-      width: 1.2em;
-      height: 1.2em;
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: center center;
-      transform: rotate(0deg);
-      transition: transform 0.2s ease-in-out;
-      background-image: url('https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/icons/chevron-down--navy.svg');
-    }
-    &[aria-expanded="true"]:before {
-      transform: rotate(180deg);
-    }
+}
+.nav-toggle {
+  display: inline-block;
+  width: 5rem;
+  position: relative;
+  @include uikit-media('sm') {
+    display: none;
   }
-  .menu {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    @include uikit-media('sm') {
-      flex-wrap: nowrap;
+  &:before {
+    content: '';
+    position: absolute;
+    top: uikit-space(.1);
+    bottom: uikit-space(.5);
+    right: uikit-space(0.2);
+    width: 1.2em;
+    height: 1.2em;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    transform: rotate(0deg);
+    transition: transform 0.2s ease-in-out;
+    background-image: url('https://gov-au-ui-kit.apps.staging.digital.gov.au/latest/img/icons/chevron-down--navy.svg');
+  }
+  &[aria-expanded="true"]:before {
+    transform: rotate(180deg);
+  }
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  @include uikit-media('sm') {
+    flex-wrap: nowrap;
+  }
+  padding: 0 !important;
+  margin: 0 !important;
+  .menu-item {
+    flex: 0 0 100%;
+    font-weight: bold;
+    a:hover {
+      border-bottom: 1px solid $uikit-colour-Link;
     }
-    padding: 0;
-    margin: 0;
+
+  }
+}
+.menu--main .menu {
+  .menu-item {
+    margin: 0 uikit-space(1) uikit-space(0.5) 0;
+  }
+  @include uikit-media('sm') {
+    justify-content: flex-start;
     .menu-item {
-      flex: 0 0 100%;
-      font-weight: bold;
-      a:hover {
-        border-bottom: 1px solid $uikit-colour-Link;
-      }
+      margin-bottom: uikit-space(0);
       @include uikit-media('sm') {
         flex: 0 0 auto;
         a:hover {
@@ -52,28 +64,17 @@
       }
     }
   }
-  .menu--main .menu {
-    .menu-item {
-      margin: 0 uikit-space(1) uikit-space(0.5) 0;
-    }
-    @include uikit-media('sm') {
-      justify-content: flex-start;
-      .menu-item {
-        margin-bottom: uikit-space(0);
-      }
-    }
+}
+.menu--account .menu {
+  margin-bottom: uikit-space(1) !important;
+  .menu-item {
+    margin: 0 0 0 uikit-space(1);
   }
-  .menu--account .menu {
-    margin-top: uikit-space(1);
+  @include uikit-media('sm') {
+    margin-top: uikit-space(0);
+    justify-content: flex-start;
     .menu-item {
-      margin: 0 uikit-space(1) 0 0;
-    }
-    @include uikit-media('sm') {
-      margin-top: uikit-space(0);
-      justify-content: flex-end;
-      .menu-item {
-        margin: 0 0 0 uikit-space(1);
-      }
+      margin: 0 0 0 uikit-space(1);
     }
   }
 }
