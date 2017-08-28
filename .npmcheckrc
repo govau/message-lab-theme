@@ -1,4 +1,5 @@
 {
+  "update": true,
   "ignore":
     ["react", "prop-types"]
 }

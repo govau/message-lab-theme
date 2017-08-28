@@ -9,7 +9,7 @@ import fs       from 'fs';
 import del      from 'del';
 import imagemin from 'gulp-imagemin';
 import cache    from 'gulp-cache';
-import npmcheck    from 'gulp-npm-check';
+import npmcheck from 'npm-check';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -20,14 +20,24 @@ const STAGING = !!(yargs.argv.staging);
 
 // Load settings from settings.yml
 const { NAME, PORT, CLEAN, ENVIRONMENTS, COMPATIBILITY, PATHS } = loadConfig();
+const { NPMCHECKSETTINGS } = loadNpmCheckConfig();
 
 function loadConfig() {
   let ymlFile = fs.readFileSync('config.yml', 'utf8');
   return yaml.load(ymlFile);
 }
 
+function loadNpmCheckConfig() {
+  let dotFile = fs.readFileSync('.npmcheckrc', 'utf8');
+  return dotFile;
+}
+
+function npmChecker() {
+  return npmcheck(NPMCHECKSETTINGS);
+}
+
 // Build the site, run the server, and watch for file changes
-gulp.task('default', gulp.series(deps, clean, optimiseImages, js, sass, server, watch));
+gulp.task('default', gulp.series(clean, npmChecker, optimiseImages, js, sass, server, watch));
 
 // Clean out the folders specified by the CLEAN constant.
 
