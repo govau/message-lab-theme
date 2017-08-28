@@ -3,31 +3,33 @@
   "version": "0.0.1",
   "description": "Drupal 8 theme for the DTA Message Lab",
   "main": "gulpfile.babel.js",
-  "dependencies": {},
+  "dependencies": {
+    "yargs": "^8.0.2"
+  },
   "devDependencies": {
     "@gov.au/body": "^0.1.1",
-    "@gov.au/breadcrumbs": "^0.2.0",
-    "@gov.au/buttons": "^0.4.0",
-    "@gov.au/callout": "^0.2.0",
-    "@gov.au/control-input": "^0.2.0",
+    "@gov.au/breadcrumbs": "^0.3.1",
+    "@gov.au/buttons": "^0.5.0",
+    "@gov.au/callout": "^0.3.0",
+    "@gov.au/control-input": "^0.3.0",
     "@gov.au/core": "^0.1.2",
-    "@gov.au/cta-link": "^0.2.0",
-    "@gov.au/footer": "^0.2.0",
+    "@gov.au/cta-link": "^0.3.0",
+    "@gov.au/footer": "^0.3.0",
     "@gov.au/grid-12": "^0.1.0",
-    "@gov.au/header": "^1.1.0",
-    "@gov.au/headings": "^0.2.0",
-    "@gov.au/link-list": "^0.2.0",
-    "@gov.au/page-alerts": "^0.2.0",
+    "@gov.au/header": "^1.2.0",
+    "@gov.au/headings": "^0.3.0",
+    "@gov.au/link-list": "^0.3.0",
+    "@gov.au/page-alerts": "^0.3.0",
     "@gov.au/pancake-js": "^1.0.9",
     "@gov.au/pancake-sass": "^1.1.1",
     "@gov.au/responsive-media": "^0.1.0",
-    "@gov.au/select": "^0.2.0",
-    "@gov.au/skip-link": "^0.2.0",
-    "@gov.au/tags": "^0.2.0",
+    "@gov.au/select": "^0.3.0",
+    "@gov.au/skip-link": "^0.3.0",
+    "@gov.au/tags": "^0.3.0",
     "@gov.au/text-inputs": "^0.1.1",
     "babel-preset-es2015": "^6.24.1",
-    "babel-register": "^6.24.1",
-    "browser-sync": "^2.18.12",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.18.13",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
@@ -35,10 +37,11 @@
     "gulp-if": "^2.0.2",
     "gulp-imagemin": "^3.3.0",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-npm-check": "^1.1.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0",
+    "gulp-sourcemaps": "^2.6.1",
     "gulp-uncss": "^1.0.6",
-    "js-yaml": "^3.8.4",
+    "js-yaml": "^3.9.1",
     "normalize.css": "^7.0.0"
   },
   "babel": {
@@ -82,6 +85,9 @@
       "modules": false,
       "location": "pancake/js/",
       "name": "pancake.min.js"
+    },
+    "react": {
+      "location": "pancake/react/"
     }
   }
 }

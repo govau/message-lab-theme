@@ -9,6 +9,7 @@ import fs       from 'fs';
 import del      from 'del';
 import imagemin from 'gulp-imagemin';
 import cache    from 'gulp-cache';
+import npmcheck    from 'gulp-npm-check';
 
 // Load all Gulp plugins into one variable
 const $ = plugins();
@@ -26,7 +27,7 @@ function loadConfig() {
 }
 
 // Build the site, run the server, and watch for file changes
-gulp.task('default', gulp.series(clean, optimiseImages, js, sass, server, watch));
+gulp.task('default', gulp.series(deps, clean, optimiseImages, js, sass, server, watch));
 
 // Clean out the folders specified by the CLEAN constant.
 
@@ -42,6 +43,12 @@ function optimiseImages(done) {
     .pipe(gulp.dest('./img'));
   browser.reload();
   done();
+}
+
+// Check dependencies.
+
+function deps(cb) {
+  npmcheck(cb);
 }
 
 // Move scripts from source into destination.
