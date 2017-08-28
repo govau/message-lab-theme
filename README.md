@@ -52,6 +52,8 @@ The theme uses gulp.js to create a local server, compile Sass into CSS, inject s
 
 Generally, you will need a local server to develop sites on, though you can use the `--staging` or `--production` flags to run a local BrowserSync server proxying a remote server.
 
+The gulp task will also automatically check if the dependencies are up-to-date. This pertains in particular to the @govau/* UI Kit packages, however it will check all of them. You will receive an error in gulp if anything is out of date. You can update the packages manually or you can use [npm-check -u](https://github.com/dylang/npm-check) to do it in a nice, friendly way. Please note that npm-check will pick up some missing packages within UI Kit. These can be ignored and are found in .npmcheckrc.
+
 ### About gulp
 
 gulp is a tool for automating various aspects of a development workflow. To add a task, install the required plugin (if necessary), import it into gulpfile.js and write the script for the task using JavaScript or ES6. There is a huge amount of plugins available for gulp so if you need to automate something it is probably possible. Check the list of [gulp recipes](https://github.com/gulpjs/gulp/tree/master/docs/recipes) for more ideas.
